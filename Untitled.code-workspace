@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/compnents"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/constants"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/data"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/models"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/navigation"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/screens"
+		},
+		{
+			"path": "/Users/yahyamokaied/Desktop/y/store"
+		}
+	],
+	"settings": {}
+}
