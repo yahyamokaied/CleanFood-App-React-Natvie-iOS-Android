@@ -113,7 +113,7 @@ const ProductsOverviewScreen = props => {
           />
           <Button
             color={Colors.primary}
-            title="To Cart"
+            title="LÄGG I VARUKORG"
             onPress={() => {
               dispatch(cartActions.addToCart(itemData.item));
             }}
@@ -126,7 +126,7 @@ const ProductsOverviewScreen = props => {
 
 ProductsOverviewScreen.navigationOptions = navData => {
   return {
-    headerTitle: 'All Products',
+    headerTitle: 'Ny Matlåda',
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item

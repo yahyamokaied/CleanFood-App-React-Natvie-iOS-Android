@@ -6,7 +6,9 @@ import {
   StyleSheet,
   Button,
   ActivityIndicator,
-  Alert
+  Alert,
+  ImageBackground,
+  Image
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useDispatch } from 'react-redux';
@@ -102,12 +104,14 @@ const AuthScreen = props => {
   );
 
   return (
+    <View style={styles.screen}>
     <KeyboardAvoidingView
       behavior="padding"
       keyboardVerticalOffset={50}
-      style={styles.screen}
     >
-      <LinearGradient colors={['#ffedff', '#ffe3ff']} style={styles.gradient}>
+        <ImageBackground source={require('../../assets/bg.jpg')} style={styles.bg}>
+        <View style={styles.logoConatiner}>
+        <Image source={require('../../assets/logo.png')} style={styles.logo} />
         <Card style={styles.authContainer}>
           <ScrollView>
             <Input
@@ -133,21 +137,23 @@ const AuthScreen = props => {
               onInputChange={inputChangeHandler}
               initialValue=""
             />
-            <View style={styles.buttonContainer}>
+            <View style={styles.button1Container}>
               {isLoading ? (
                 <ActivityIndicator size="small" color={Colors.primary} />
               ) : (
                 <Button
-                  title={isSignup ? 'Sign Up' : 'Login'}
+                  title={isSignup ? 'Registrera' : 'Logga in'}
                   color={Colors.primary}
+                  backgroundColor={Colors.accent}
                   onPress={authHandler}
                 />
               )}
             </View>
-            <View style={styles.buttonContainer}>
+            <View style={styles.button2Container}>
               <Button
-                title={`Switch to ${isSignup ? 'Login' : 'Sign Up'}`}
+                title={`eller.. ${isSignup ? 'Logga in' : 'Registrera'}`}
                 color={Colors.accent}
+                backgroundColor={Colors.primary}
                 onPress={() => {
                   setIsSignup(prevState => !prevState);
                 }}
@@ -155,18 +161,20 @@ const AuthScreen = props => {
             </View>
           </ScrollView>
         </Card>
-      </LinearGradient>
+        </View>
+        </ImageBackground>
     </KeyboardAvoidingView>
+   </View>
   );
 };
 
 AuthScreen.navigationOptions = {
-  headerTitle: 'Authenticate'
+  headerTitle: 'CleanFood.se'
 };
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1
+    flex: 1,
   },
   gradient: {
     flex: 1,
@@ -177,10 +185,35 @@ const styles = StyleSheet.create({
     width: '80%',
     maxWidth: 400,
     maxHeight: 400,
-    padding: 20
+    padding: 10,
+    alignSelf:'center',
+    marginTop:0,
+},
+  button1Container: {
+    fontWeight:'bold',
+    marginTop: 10,
+    backgroundColor:'#ff9d00'
   },
-  buttonContainer: {
-    marginTop: 10
+  button2Container: {
+    fontWeight:'bold',
+    marginTop: 10,
+    backgroundColor:'#000000'
+  },
+  bg:{
+    width:'100%',
+    height:'100%',
+  },
+  logo:{
+    width:150,
+    height:150,
+    alignSelf: 'center',
+    resizeMode:'cover',
+  },
+  logoConatiner:{
+    paddingVertical:1,
+    width:'90%',
+    height:'90%',
+    alignSelf:'center',
   }
 });
 

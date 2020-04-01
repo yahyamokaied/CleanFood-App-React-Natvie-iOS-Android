@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Blank Template",
-    "slug": "cf",
+    "name": "CleanFood",
+    "description": "FITNESSKÖKET SOM PREPPAR DINA MATLÅDOR",
+    "slug": "FITNESS_KITCHEN_PREPARING_YOUR_HEALTHY_FOOD_BOXES",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -13,7 +14,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +25,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yahyamokaied.cleanfood",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yahyamokaied.cleanfood",
+      "versionCode": 1, 
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor":"#ffffff"
+    },
+    "permissions": [
+      "ACCESS_FINE_LOCATION",
+      "WRITE_EXTERNAL_STORAGE"
+    ]
+  }
   }
 }

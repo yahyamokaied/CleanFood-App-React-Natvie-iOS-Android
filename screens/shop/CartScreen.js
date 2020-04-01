@@ -46,17 +46,16 @@ const CartScreen = props => {
     <View style={styles.screen}>
       <Card style={styles.summary}>
         <Text style={styles.summaryText}>
-          Total:{' '}
+        Summa:{' '}
           <Text style={styles.amount}>
-            ${Math.round(cartTotalAmount.toFixed(2) * 100) / 100}
-          </Text>
+            {Math.round(cartTotalAmount.toFixed(2) * 100) / 100 } Kr</Text>
         </Text>
         {isLoading ? (
           <ActivityIndicator size="small" color={Colors.primary} />
         ) : (
           <Button
             color={Colors.accent}
-            title="Order Now"
+            title="TILL KASSAN"
             disabled={cartItems.length === 0}
             onPress={sendOrderHandler}
           />
@@ -82,7 +81,7 @@ const CartScreen = props => {
 };
 
 CartScreen.navigationOptions = {
-  headerTitle: 'Your Cart'
+  headerTitle: 'VARUKORG'
 };
 
 const styles = StyleSheet.create({

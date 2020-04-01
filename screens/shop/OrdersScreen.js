@@ -61,7 +61,7 @@ const OrdersScreen = props => {
 
 OrdersScreen.navigationOptions = navData => {
   return {
-    headerTitle: 'Your Orders',
+    headerTitle: 'Beställningar',
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
